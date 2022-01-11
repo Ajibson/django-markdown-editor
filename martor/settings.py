@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.conf import settings
+import os
 
 # Choices are: "semantic", "bootstrap"
 MARTOR_THEME = getattr(settings, "MARTOR_THEME", "bootstrap")
@@ -138,3 +139,8 @@ ALLOWED_URL_SCHEMES = getattr(
         "xmpp",
     ],
 )
+
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+STATIC_ROOT = os.path.join(settings.BASE_DIR, "static")
+MEDIA_ROOT = os.path.join(settings.BASE_DIR, "media")
